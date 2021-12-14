@@ -1,6 +1,6 @@
 from random import *
 def arvud_loendis():
-    """Ввод данных, вызов функций, показ ответов
+    """sissepanime teatmidsed, funktsioonide call, vastuse return tegime
     """
     s=[]
     print("Данные:")
@@ -33,34 +33,32 @@ def arvud_loendis():
     print(s)
 def vahetus(a:int,b:int):
     """ kui min on suuren kui max, siis vahetame neid omavahel
-    :param int a: minimaalne arv, mis on suurem kui max
-    :param int b: maksimaalne arv, mis on väiksem kui max
-    :rtype int:
+    :param:int a: minimaalne arv, mis on suurem kui max
+    :param:int b: maksimaalne arv, mis on väiksem kui max
+    :rtype:int:
     """
     abi=a
     a=b
     b=abi
     return a,b
-
 def generaator(n:int,loend:list,a:int,b:int):
     """
-    :param:int n: kui palju arvud on
-    :param:list loend: arvude loend
-    :param:int a: 
-    :param:int b: макс значение
-    :rtype list:
+    :param:int:n: kui palju arvud on
+    :param:list:loend: arvude loend
+    :param:int:a: väiksem arvus
+    :param:int:b: suurem arvus
+    :rtype:list:
     """
     for i in range (n):
         loend.append(randint(a,b))
     return loend
-
 def jagamine(loend:list,p:list,n:list,nol:list):
-    """Добавление в разные списки переменной пр выполнении условий
-    :param list loend: список с числами
-    :param list p: список с числами больше нуля
-    :param list n: список с числами меньше нуля
-    :param list nol: список с нулевыми значениями
-    :rtype list:
+    """lisame erineva loendi muutuja kui kõik on tehtud hästi
+    :param:list loend: arvu loendid
+    :param:list p: suurem kui nulli arvu loendid
+    :param:list n: väiksem kui nulli arvu loendid
+    :param:list nol: nulli arvu loendid
+    :rtype:list:
     """
     for el in loend:
         if el>0:
@@ -72,10 +70,10 @@ def jagamine(loend:list,p:list,n:list,nol:list):
     return p,n,nol
 
 def keskmine(loend:list):
-    """Вычисление среднего значения из списка
-    :param list loend: список с числами
-    :param int n: список с отрицательными/положительными числами
-    :rtype float:
+    """arvutame keskmine 
+    :param:list:loend: arvu loend
+    :param:int:n: loend negatiivse ja positiivsw nubriga
+    :rtype:float:
     """
     n=len(loend)
     if n==0:
@@ -88,10 +86,10 @@ def keskmine(loend:list):
     return kesk
 
 def lisamine(loend:list,el:float):
-    """Добавление в список среднего значения и сортировка
-    :param list loend: список с числами
-    :param float el: средние значения 
-    :rtype list:
+    """paneme loendis keskmine arvuse ja  sorteerimine
+    :param:list:loend: arvu loend
+    :param:float:el: keskmine arvud
+    :rtype:list:
     """
     loend.append(el)
     loend.sort()
