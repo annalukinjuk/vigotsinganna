@@ -1,43 +1,47 @@
 from random import *
+s=pos,neg,nol
 def arvud_loendis():
+    """Otsime kui palju numbri paneme loendisse 
+    :param:int: suurim ja väiksem arv:
+    :rtype:var:
+    """
     print("Данные:")
     n=abs(int(input("Сколько целых чисел генерируем в список? => ")))
     mini=int(input("Введите минимальное число диапазона => "))
     maxi=int(input("Введите максимальное число диапазона => "))
-    if mini>=maxi:
-        vahetus(mini,maxi):
-            generator(n,s,mini,maxi):
+    if mini>=maxi: #mini=100, maxi=5 -> mini=5, maxi=100
+        mini,maxi=vahetus(mini,maxi)
+    generaator(n,s,mini,maxi)
     print()
     print("Результаты:")
     print("Полученный список от",mini,"до",maxi,s)
     sort(s)
     print("Отсортированный список",s)
-    jagamine(s,pos,neg,nol):
+    jagamine(s,pos,neg,nol)
     print("Список положительных элементов",pos)
     print("Список отрицательных элементов",neg)
     print("Список нулевых элементов",null)
     kesk=keskmine(pos,n):
-    lisamine(s,kesk):
+        lisamine(s,kesk):
     print("Среднее положительных:",kesk)
     kesk=keskmine(neg,n):
-    lisamine(s,kesk):
+        lisamine(s,kesk):
     print("Среднее отрицательных:",kesk)
     print("Добавляем средние в изначалный массив:")
     sort(s)
     print(s)
 
-def vahetus(a,b):
+def vahetus(a:int,b:int):
     abi=a
     a=b
     b=abi
     return a,b
 
-def generaator(n,loend,a,b):
-    for i in range n:
-    loend(append(randint(a,b)))
-    
+def generaator(n:int,loend:list,a:int,b:int):
+    for i in range(n):
+    loend.append(randint(a,b))
 
-def jagamine(loend,p,n,nol):
+def jagamine(loend:list,p:list,n:list,nol:list):
     for el in loend:
         if el>0:
             p(append(el))
